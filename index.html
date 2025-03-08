@@ -1,10 +1,96 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My GitHub Page</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Profile</title>
+  <!-- Link to external CSS file -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>Welcome to My GitHub Page!</h1>
-    <p>This is my first GitHub Pages website.</p>
+  <!-- Header / Navigation -->
+  <header>
+    <div class="header-container">
+      <div class="logo"><a href="#">MyProfile</a></div>
+      <nav>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#challenge">Challenge</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <h1>Hi, I'm a CSE Student</h1>
+    <p>
+      Passionate about Competitive Programming and Building Innovative Solutions.
+    </p>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h2 class="section-title">About Me</h2>
+    <p>
+      I am a Computer Science Engineering student with a deep passion for competitive programming.
+      I love solving challenging problems and building projects that make a difference.
+    </p>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <h2 class="section-title">Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>Intelligent Algorithms Visualizer</h3>
+        <p>
+          An interactive tool that visualizes complex algorithms, making them easier to understand.
+        </p>
+      </div>
+      <div class="project-card">
+        <h3>Packet Sniffer</h3>
+        <p>
+          A network tool designed to capture and analyze network packets in real time.
+        </p>
+      </div>
+      <div class="project-card">
+        <h3>Intelligent Algorithms Recommender</h3>
+        <p>
+          An innovative system that suggests the best algorithms based on specific problems.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- NASA Space Apps Challenge Section -->
+  <section id="challenge" class="challenge">
+    <h2 class="section-title">NASA Space Apps Challenge</h2>
+    <p>
+      I had the privilege to participate in the NASA Space Apps Challenge, collaborating with global innovators to tackle real-world challenges using technology.
+    </p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2 class="section-title">Contact Me</h2>
+    <form onsubmit="sendMessage(event)">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Your Name. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Link to external JavaScript file -->
+  <script src="script.js"></script>
 </body>
 </html>

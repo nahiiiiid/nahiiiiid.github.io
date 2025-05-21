@@ -1,96 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>nahid_hasan_saikot</title>
-  <!-- Link to external CSS file -->
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name | CSE Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-  <!-- Header / Navigation -->
-  <header>
-    <div class="header-container">
-      <div class="logo"><a href="#">nahiiiiid</a></div>
-      <nav>
-        <ul>
-          <li><a href="#hero">bytes_of_me</a></li>
-          <li><a href="#about">expertise_sections</a></li>
-          <li><a href="#projects">my_projects</a></li>
-          <li><a href="#challenge">accepted_challenges</a></li>
-          <li><a href="#contact">contact_with_me</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    <header>
+        <nav>
+            <div class="logo">YOUR LOGO</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <!-- Hero Section -->
-  <section id="hero" class="hero">
-    <h1>Hi, I'm a CSE Student</h1>
-    <p>
-      Passionate about Competitive Programming and Building Innovative Solutions.
-    </p>
-  </section>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Hi, I'm <span class="highlight">Your Name</span></h1>
+            <p>Computer Science & Engineering Student</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="far fa-envelope"></i></a>
+            </div>
+        </div>
+    </section>
 
-  <!-- About Section -->
-  <section id="about" class="about">
-    <h2 class="section-title">About Me</h2>
-    <p>
-      I am a Computer Science Engineering student with a deep passion for competitive programming.
-      I love solving challenging problems and building projects that make a difference.
-    </p>
-  </section>
+    <section id="about" class="section">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <img src="image.png" alt="Your Name" class="profile-img">
+            <div class="bio">
+                <p>Add your detailed bio here. Include your passions, interests, and academic journey.</p>
+                <!-- Add more paragraphs as needed -->
+            </div>
+        </div>
+    </section>
 
-  <!-- Projects Section -->
-  <section id="projects" class="projects">
-    <h2 class="section-title">Projects</h2>
-    <div class="projects-grid">
-      <div class="project-card">
-        <h3>Intelligent Algorithms Visualizer</h3>
-        <p>
-          An interactive tool that visualizes complex algorithms, making them easier to understand.
-        </p>
-      </div>
-      <div class="project-card">
-        <h3>Packet Sniffer</h3>
-        <p>
-          A network tool designed to capture and analyze network packets in real time.
-        </p>
-      </div>
-      <div class="project-card">
-        <h3>Intelligent Algorithms Recommender</h3>
-        <p>
-          An innovative system that suggests the best algorithms based on specific problems.
-        </p>
-      </div>
-    </div>
-  </section>
+    <section id="skills" class="section">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-container">
+            <!-- Skill cards populated by JavaScript -->
+        </div>
+    </section>
 
-  <!-- NASA Space Apps Challenge Section -->
-  <section id="challenge" class="challenge">
-    <h2 class="section-title">NASA Space Apps Challenge</h2>
-    <p>
-      I had the privilege to participate in the NASA Space Apps Challenge, collaborating with global innovators to tackle real-world challenges using technology.
-    </p>
-  </section>
+    <section id="projects" class="section">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-grid">
+            <!-- Project cards populated by JavaScript -->
+        </div>
+    </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="contact">
-    <h2 class="section-title">Contact Me</h2>
-    <form onsubmit="sendMessage(event)">
-      <input type="text" name="name" placeholder="Enter_your_name" required />
-      <input type="email" name="email" placeholder="Enter_your_email" required />
-      <textarea name="message" placeholder="Write_your_words_to_me" rows="5" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
+    <section id="education" class="section">
+        <h2 class="section-title">Education</h2>
+        <div class="timeline">
+            <!-- Timeline items populated by JavaScript -->
+        </div>
+    </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 nahid_hasan_saikot. All Rights Reserved.</p>
-  </footer>
+    <section id="contact" class="section">
+        <h2 class="section-title">Get in Touch</h2>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
 
-  <!-- Link to external JavaScript file -->
-  <script src="script.js"></script>
+    <footer>
+        <p>&copy; 2023 Your Name. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

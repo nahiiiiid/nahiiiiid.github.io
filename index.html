@@ -3,161 +3,132 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nahid's Site</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>nahiiiiid's insights</title>
+    <link rel="stylesheet" href="styles.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
   </head>
-  <body>
-    <header>
-      <nav>
-        <div class="logo">nahiiiiid</div>
+  <body class="dark-theme">
+    <nav class="navbar">
+      <div class="nav-left">
+    <a class="logo" onclick="executeCommand('insights')">
+        <i class="fas fa-terminal"></i> nahiiiiid
+    </a>
+    <div class="nav-buttons">
+        <button onclick="executeCommand('insights')">
+            <i class="fas fa-user-secret"></i> 
+        </button>
+        <button onclick="executeCommand('skills')">
+            <i class="fas fa-laptop-code"></i> 
+        </button>
+        <button onclick="executeCommand('projects')">
+            <i class="fas fa-project-diagram"></i> 
+        </button>
+        <button onclick="executeCommand('education')">
+            <i class="fas fa-graduation-cap"></i> 
+        </button>
+    </div>
+</div>
 
-        <!-- Social Icons Box -->
-        <div class="social-box">
-          <a
-            href="mailto:nahidhasansaikot@email.com"
-            target="_blank"
-            class="nav-icon"
-          >
-            <i class="fas fa-envelope"></i>
-          </a>
-          <a
-            href="https://github.com/nahiiiiid"
-            target="_blank"
-            class="nav-icon"
-          >
-            <i class="fab fa-github"></i>
-          </a>
-          <a href="https://wa.me/01516546810" target="_blank" class="nav-icon">
-            <i class="fab fa-whatsapp"></i>
-          </a>
-          <a
-            href="https://linkedin.com/in/yourprofile"
-            target="_blank"
-            class="nav-icon"
-          >
-            <i class="fab fa-linkedin"></i>
-          </a>
-          <a
-            href="https://facebook.com/yourprofile"
-            target="_blank"
-            class="nav-icon"
-          >
-            <i class="fab fa-facebook"></i>
-          </a>
-          <a
-            href="https://twitter.com/yourprofile"
-            target="_blank"
-            class="nav-icon"
-          >
-            <i class="fab fa-twitter"></i>
-          </a>
-        </div>
-        <ul class="nav-links">
-          <li>
-            <a href="#home">
-              <i class="fas fa-home"></i>
-              <span>Home</span>
-            </a>
-          </li>
-          <li>
-            <a href="#about">
-              <i class="fas fa-user"></i>
-              <span>About</span>
-            </a>
-          </li>
-          <li>
-            <a href="#skills">
-              <i class="fas fa-code"></i>
-              <span>Skills</span>
-            </a>
-          </li>
-          <li>
-            <a href="#projects">
-              <i class="fas fa-project-diagram"></i>
-              <span>Projects</span>
-            </a>
-          </li>
-          <li>
-            <a href="#education">
-              <i class="fas fa-graduation-cap"></i>
-              <span>Education</span>
-            </a>
-          </li>
-          <li>
-            <a href="#contact">
-              <i class="fas fa-envelope"></i>
-              <span>Contact</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+      <div class="terminal-input-container">
+        <span class="prompt">$</span>
+        <input
+          type="text"
+          class="terminal-input"
+          id="commandInput"
+          autocomplete="off"
+          placeholder="Type 'help' for suggestions...!"
+          autofocus 
+        />
+      </div>
+      <button class="help-btn" onclick="toggleHelp()">
+          <i class="fas fa-question-circle"></i>
+        </button>
 
-    <section id="home" class="hero">
-      <div class="hero-content">
-        <h1>Hi, I'm <span class="highlight">Nahid Hasan Saikot</span></h1>
-        <p>Programmer</p>
-        <div class="social-icons">
-          <a href="#"><i class="fab fa-github"></i></a>
-          <a href="#"><i class="fab fa-linkedin"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
+      <div class="nav-right">
+        <div class="social-links">
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
           <a href="#"><i class="far fa-envelope"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/nahiiiiid"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-kaggle"></i></a>
+          <a href="#"><i class="fab fa-leetcode"></i></a>
         </div>
       </div>
-    </section>
+    </nav>
 
-    <section id="about" class="section">
-      <h2 class="section-title">About Me</h2>
-      <div class="about-content">
-        <img src="image.png" alt="Your Name" class="profile-img" />
-        <div class="bio">
-          <p>
-            Add your detailed bio here. Include your passions, interests, and
-            academic journey.
-          </p>
-          <!-- Add more paragraphs as needed -->
+    <div class="help-modal" id="helpModal">
+      <div class="modal-content">
+        <span class="close-btn" onclick="toggleHelp()">&times;</span>
+        <h3>Available Commands</h3>
+        <div class="command-list" id="commandList"></div>
+      </div>
+    </div>
+
+    <main class="container">
+      <div class="terminal-container">
+        <div class="terminal">
+          <div class="terminal-header">
+            <span>nahid_hasan_saikot@nahiiiiid:~$</span>
+          </div>
+          <div class="command-history" id="history"></div>
         </div>
       </div>
-    </section>
 
-    <section id="skills" class="section">
-      <h2 class="section-title">Technical Skills</h2>
-      <div class="skills-container">
-        <!-- Skill cards populated by JavaScript -->
-      </div>
-    </section>
+      <section id="insights" class="section">
+        <div class="content-box">
+          <h2><i class="fas fa-user-secret"></i> Insights</h2>
+          <div class="profile">
+            <img src="nahid.jpeg" alt="Profile" class="profile-img" />
+            <div class="bio">
+              <h3>Nahid Hasan Saikot ||--|| Programmer</h3>
+              <p>
+                >_ Cybersecurity Researcher  
+              </p>
+              <p>
+                >_ Linux enthusiast 
+              </p>
+              <p>
+                >_ Full-stack developer 
+              </p>
+              <p>
+                >_ ML Explorer
+              </p>
+              <p>
+                >_ Open-source contributor 
+              </p>
+            </div>
 
-    <section id="projects" class="section">
-      <h2 class="section-title">Projects</h2>
-      <div class="projects-grid">
-        <!-- Project cards populated by JavaScript -->
-      </div>
-    </section>
+            </div>
+          </div>
+        </div>
+      </section>
 
-    <section id="education" class="section">
-      <h2 class="section-title">Education</h2>
-      <div class="timeline">
-        <!-- Timeline items populated by JavaScript -->
-      </div>
-    </section>
+      <section id="skills" class="section">
+        <div class="content-box">
+          <h2><i class="fas fa-laptop-code"></i> Skills</h2>
+          <div class="skills-grid"></div>
+        </div>
+      </section>
 
-    <section id="contact" class="section">
-      <h2 class="section-title">Get in Touch</h2>
-      <form class="contact-form">
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <textarea placeholder="Your Message" rows="5" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-    </section>
+      <section id="projects" class="section">
+        <div class="content-box">
+          <h2><i class="fas fa-project-diagram"></i> Projects</h2>
+          <div class="projects-grid"></div>
+        </div>
+      </section>
 
-    <footer>
-      <p>&copy; 2023 Your Name. All rights reserved.</p>
-    </footer>
+      <section id="education" class="section">
+            <div class="content-box">
+                <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+                <div class="education-list"></div>
+            </div>
+        </section>
+    </main>
+
+
 
     <script src="script.js"></script>
   </body>

@@ -170,9 +170,9 @@ function loadSectionContent(sectionId) {
             const educationData = [
                 {
                     type: 'school',
-                    title: 'High School',
-                    institution: 'Your School Name',
-                    duration: '2016-2018',
+                    title: 'Primary School',
+                    institution: 'Dwipnagar High School',
+                    duration: '20',
                     details: ['Board: State Board', 'Percentage: 92%'],
                     color: '#7ee787' // Green
                 },
@@ -236,21 +236,22 @@ function loadContent() {
         { name: 'Cybersecurity', icon: 'fas fa-shield-alt', desc: 'Ethical Hacking' },
         { name: 'Networking', icon: 'fas fa-network-wired', desc: 'TCP/IP, DNS' },
         { name: 'Web Dev', icon: 'fas fa-code', desc: 'Full Stack Development' },
-
-        { name: 'Python', icon: 'fab fa-python', desc: 'Scripting & Automation' },
-        { name: 'C++', icon: 'fas fa-file-code', desc: 'System Programming' },
-        { name: 'Linux', icon: 'fab fa-linux', desc: 'System Administration' },
-        { name: 'Cybersecurity', icon: 'fas fa-shield-alt', desc: 'Ethical Hacking' },
-        { name: 'Networking', icon: 'fas fa-network-wired', desc: 'TCP/IP, DNS' },
-        { name: 'Web Dev', icon: 'fas fa-code', desc: 'Full Stack Development' },
-
-        { name: 'Python', icon: 'fab fa-python', desc: 'Scripting & Automation' },
-        { name: 'C++', icon: 'fas fa-file-code', desc: 'System Programming' },
-        { name: 'Linux', icon: 'fab fa-linux', desc: 'System Administration' },
-        { name: 'Cybersecurity', icon: 'fas fa-shield-alt', desc: 'Ethical Hacking' },
-        { name: 'Networking', icon: 'fas fa-network-wired', desc: 'TCP/IP, DNS' },
-        { name: 'Web Dev', icon: 'fas fa-code', desc: 'Full Stack Development' }
+        { name: 'Machine Learning', icon: 'fas fa-robot', desc: 'Data Analysis & AI' },
+        { name: 'Penetration Testing', icon: 'fas fa-bug', desc: 'Vulnerability Assessment' },
+        { name: 'Reverse Engineering', icon: 'fas fa-microchip', desc: 'Malware Analysis' },
+        { name: 'Cryptography', icon: 'fas fa-lock', desc: 'Encryption & Security' }
     ];
+
+    const skillsGrid = document.querySelector('.skills-grid');
+    skills.forEach(skill => {
+        skillsGrid.innerHTML += `
+            <div class="skill-card">
+                <i class="${skill.icon} fa-2x"></i>
+                <h3>${skill.name}</h3>
+                <p>${skill.desc}</p>
+            </div>
+        `;
+    });
 
     const projects = [
         {
@@ -296,18 +297,6 @@ function loadContent() {
             link: '#'
         }
     ];
-
-
-    const skillsGrid = document.querySelector('.skills-grid');
-    skills.forEach(skill => {
-        skillsGrid.innerHTML += `
-            <div class="skill-card">
-                <i class="${skill.icon} fa-2x"></i>
-                <h3>${skill.name}</h3>
-                <p>${skill.desc}</p>
-            </div>
-        `;
-    });
 
     // In loadContent() function
     const projectsGrid = document.querySelector('.projects-grid');

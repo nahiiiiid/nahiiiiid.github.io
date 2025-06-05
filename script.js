@@ -28,7 +28,7 @@ const commands = {
         help: 'Change color theme [dark/light/matrix]'
     },
     repo: {
-        execute: () => window.open('https://github.com/yourusername', '_blank'),
+        execute: () => window.open('https://github.com/nahiiiiid', '_blank'),
         help: 'Open GitHub repository'
     },
     history: {
@@ -171,33 +171,33 @@ function loadSectionContent(sectionId) {
                 {
                     type: 'school',
                     title: 'Primary School',
+                    institution: 'Dwipnagar Govt. Primary School',
+                    duration: '2006-2011',
+                    details: ['Board: Rajshahi'],
+                    color: '#7ee787' // Green
+                },
+                {
+                    type: 'school',
+                    title: 'Secondary School',
                     institution: 'Dwipnagar High School',
-                    duration: '20',
-                    details: ['Board: State Board', 'Percentage: 92%'],
+                    duration: '2012-2017',
+                    details: ['Board: Rajshahi'],
                     color: '#7ee787' // Green
                 },
                 {
                     type: 'college',
                     title: 'Intermediate',
-                    institution: 'Your College Name',
+                    institution: 'Machmail Degree College',
                     duration: '2018-2020',
-                    details: ['Stream: Science', 'Percentage: 89%'],
+                    details: ['Stream: Science'],
                     color: '#58a6ff' // Blue
                 },
                 {
                     type: 'university',
-                    title: 'B.Tech Computer Science',
-                    institution: 'Your University Name',
-                    duration: '2020-2024',
-                    details: ['CGPA: 9.2', 'Specialization: Cyber Security'],
-                    color: '#d2a8ff' // Purple
-                },
-                {
-                    type: 'university',
-                    title: 'B.Tech Computer Science',
-                    institution: 'Your University Name',
-                    duration: '2020-2024',
-                    details: ['CGPA: 9.2', 'Specialization: Cyber Security'],
+                    title: 'B.Sc in Computer Science',
+                    institution: 'Green University of Bangladesh',
+                    duration: '2021-2025',
+                    details: ['Specialization: Cyber Security and ML'],
                     color: '#d2a8ff' // Purple
                 }
             ];
@@ -237,9 +237,7 @@ function loadContent() {
         { name: 'Networking', icon: 'fas fa-network-wired', desc: 'TCP/IP, DNS' },
         { name: 'Web Dev', icon: 'fas fa-code', desc: 'Full Stack Development' },
         { name: 'Machine Learning', icon: 'fas fa-robot', desc: 'Data Analysis & AI' },
-        { name: 'Penetration Testing', icon: 'fas fa-bug', desc: 'Vulnerability Assessment' },
         { name: 'Reverse Engineering', icon: 'fas fa-microchip', desc: 'Malware Analysis' },
-        { name: 'Cryptography', icon: 'fas fa-lock', desc: 'Encryption & Security' }
     ];
 
     const skillsGrid = document.querySelector('.skills-grid');
@@ -255,46 +253,22 @@ function loadContent() {
 
     const projects = [
         {
-            name: 'Network Scanner',
-            desc: 'Advanced Python-based network analysis tool with real-time monitoring and threat detection capabilities. Supports multiple scanning protocols and provides detailed network topology mapping.',
-            tech: 'Python, Scapy, Socket, Nmap',
-            link: '#'
+            name: 'Algorithms Visualizer',
+            desc: 'An interactive web-based platform designed to visually demonstrate the workings of various algorithms, including sorting, searching, and graph traversal. The visualizer helps learners and developers understand algorithmic steps through animated transitions, real-time speed control, and user interactions. Additional features include a back-step option, complexity analysis, and a user-friendly interface.twork analysis tool with real-time monitoring and threat detection capabilities. Supports multiple scanning protocols and provides detailed network topology mapping.',
+            tech: 'HTML, CSS, Javascirpt',
+            link: 'https://github.com/nahiiiiid/Intelligent-Algorithm-Visualizer'
         },
         {
-            name: 'Malware Detector',
-            desc: 'Machine learning powered detection system using behavioral analysis and signature matching. Implements real-time monitoring with automated quarantine system for suspicious files.',
-            tech: 'Python, TensorFlow, Scikit-learn, Cuckoo Sandbox',
-            link: '#'
+            name: 'Packet Sniffer',
+            desc: 'A low-level network utility developed to capture and analyze packets flowing through a network interface in real-time. The tool extracts headers, protocol information, and payload data, providing insights into IP, TCP, UDP, and ICMP packets. Useful for educational purposes, network diagnostics, and basic cybersecurity analysis.ered detection system using behavioral analysis and signature matching. Implements real-time monitoring with automated quarantine system for suspicious files.',
+            tech: 'Python, Scapy, Socket, Linux, Wireshark',
+            link: 'https://github.com/nahiiiiid/Packet-Sniffer'
         },
         {
-            name: 'Network Scanner',
-            desc: 'Advanced Python-based network analysis tool with real-time monitoring and threat detection capabilities. Supports multiple scanning protocols and provides detailed network topology mapping.',
-            tech: 'Python, Scapy, Socket, Nmap',
-            link: '#'
-        },
-        {
-            name: 'Malware Detector',
-            desc: 'Machine learning powered detection system using behavioral analysis and signature matching. Implements real-time monitoring with automated quarantine system for suspicious files.',
-            tech: 'Python, TensorFlow, Scikit-learn, Cuckoo Sandbox',
-            link: '#'
-        },
-        {
-            name: 'Network Scanner',
-            desc: 'Advanced Python-based network analysis tool with real-time monitoring and threat detection capabilities. Supports multiple scanning protocols and provides detailed network topology mapping.',
-            tech: 'Python, Scapy, Socket, Nmap',
-            link: '#'
-        },
-        {
-            name: 'Malware Detector',
-            desc: 'Machine learning powered detection system using behavioral analysis and signature matching. Implements real-time monitoring with automated quarantine system for suspicious files.',
-            tech: 'Python, TensorFlow, Scikit-learn, Cuckoo Sandbox',
-            link: '#'
-        },
-        {
-            name: 'Network Scanner',
-            desc: 'Advanced Python-based network analysis tool with real-time monitoring and threat detection capabilities. Supports multiple scanning protocols and provides detailed network topology mapping.',
-            tech: 'Python, Scapy, Socket, Nmap',
-            link: '#'
+            name: 'Algorithms Recommender',
+            desc: 'An AI-powered system that recommends the most suitable algorithm for a given problem statement. Users can input competitive programming problems (with constraints), and the system analyzes patterns, complexity requirements, and data structures to suggest optimal algorithms using intelligent rule-based and machine learning techniques.d network analysis tool with real-time monitoring and threat detection capabilities. Supports multiple scanning protocols and provides detailed network topology mapping.',
+            tech: 'Python, Scikit-Learn, Pandas, NumPy, scraping, Flask, HTML, CSS, Javascipt',
+            link: 'https://github.com/nahiiiiid/Intelligent-Algorithms-Recommender'
         }
     ];
 

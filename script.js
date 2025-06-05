@@ -96,7 +96,7 @@ function processCommand(input) {
 function displayHelp() {
     let helpText = 'Available commands:\n\n';
     for (const [cmd, details] of Object.entries(commands)) {
-        helpText += `${cmd.padEnd(10)} ${details.help}\n`;
+        helpText += `${cmd.padEnd(10)} - ${details.help} ||\n`;
     }
     return helpText;
 }
@@ -113,7 +113,7 @@ function changeTheme(theme) {
         'solarized', 'crt', 'sunset',
         'ocean', 'coffee', 'nord'
     ];
-    if (!theme) return 'Usage: theme [dark|light|matrix]';
+    if (!theme) return 'Usage: theme [dark|light|matrix|cyberpunk|dracula|midnight|solarized|crt|sunset|ocean|coffee|nord]';
     if (!validThemes.includes(theme)) return `Invalid theme. Available: ${validThemes.join(', ')}`;
 
     document.body.className = `${theme}-theme`;

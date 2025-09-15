@@ -318,6 +318,61 @@ body {
     margin-bottom: 1rem;
 }
 
+.project-card {
+  display: flex;
+  background: #1e293b;
+  margin: 2rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.project-images {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+.project-images img {
+  width: 100%;
+  animation: slide 12s infinite;
+}
+
+@keyframes slide {
+  0% {transform: translateX(0);}
+  33% {transform: translateX(-100%);}
+  66% {transform: translateX(-200%);}
+  100% {transform: translateX(0);}
+}
+
+.project-info {
+  flex: 1;
+  padding: 20px;
+}
+
+.tools span {
+  background: #0f172a;
+  margin: 5px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.links a {
+  margin-right: 10px;
+  color: #38bdf8;
+}
+
+.timeline {
+  padding: 20px;
+}
+
+.timeline-item {
+  margin: 10px 0;
+  padding: 10px;
+  background: #1e293b;
+  border-radius: 6px;
+}
+
 /* Education Timeline */
 
 

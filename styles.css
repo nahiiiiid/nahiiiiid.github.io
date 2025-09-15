@@ -243,134 +243,136 @@ body {
 
 /* Projects Section */
 .projects-grid {
-    display: grid;
-    gap: 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
+/* Updated project card style with slider */
 .project-card {
-    background: var(--terminal-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 2rem;
-    transition: transform 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  background: var(--terminal-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  height: 500px;
+}
+
+/* alternate layout */
+.project-card.reverse {
+  flex-direction: row-reverse;
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--primary-color);
+  transform: translateY(-5px);
+  border-color: var(--primary-color);
+}
+
+/* Left side: images */
+.project-images {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+  max-width: 50%;
+}
+
+.project-images img {
+  width: 100%;
+  flex-shrink: 0;
+  animation: slide 12s infinite;
+  object-fit: cover;
+}
+
+@keyframes slide {
+  0% { transform: translateX(0); }
+  33% { transform: translateX(-100%); }
+  66% { transform: translateX(-200%); }
+  100% { transform: translateX(0); }
+}
+
+/* Info Section */
+.project-info {
+  flex: 1;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content:first baseline;
 }
 
 .project-name {
-    font-family: 'Courier New', monospace;
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
+  font-family: 'Courier New', monospace;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+
+  padding: 0.3rem 0.8rem;      /* space inside the border */
+  border: 2px solid var(--primary-color); /* border color */
+  border-radius: 6px;          /* rounded corners */
+  display: inline-block;       /* shrink to content width */
 }
 
 .project-desc {
-    font-size: 1.1rem;
-    color: var(--text-color);
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  color: var(--text-color);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+
+  padding: 0.3rem 0.8rem;      /* space inside the border */
+  border: 2px solid var(--primary-color); /* border color */
+  border-radius: 6px;          /* rounded corners */
+  display: inline-block;       /* shrink to content width */
 }
 
-.project-tech {
-    font-family: 'Fira Code', monospace;
-    font-size: 0.9rem;
-    color: #7ee787;
-    background: rgba(126, 231, 135, 0.1);
-    padding: 0.5rem 1rem;
-    border-radius: 7px;
-    display: inline-block;
-    margin-bottom: 1.5rem;
+/* Tools (tech stack tags) */
+.tools span {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9rem;
+  color: #7ee787;
+  background: rgba(126, 231, 135, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 7px;
+  display: inline-block;
+  margin: 0 5px 10px 0;
 }
 
-.project-link {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: 500;
-    transition: all 0.3s ease;
+/* Links */
+.links {
+  margin-top: 1rem;
+  padding: 0.3rem 0.8rem;      /* space inside the border */
+  border: 2px solid var(--primary-color); /* border color */
+  border-radius: 6px;          /* rounded corners */
+  display: inline-block;       /* shrink to content width */
 }
 
-.project-link i {
-    font-size: 0.8rem;
+.links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-right: 15px;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
 
-.project-link:hover {
-    color: #79c0ff;
-    transform: translateX(5px);
+.links a:hover {
+  color: #79c0ff;
+  transform: translateX(5px);
 }
 
-
-.education-list {
-    margin-top: 2rem;
+.links i {
+  font-size: 0.9rem;
 }
+
 
 .education-item {
     padding: 1rem;
     border: 1px solid var(--border-color);
     border-radius: 6px;
     margin-bottom: 1rem;
-}
-
-.project-card {
-  display: flex;
-  background: #1e293b;
-  margin: 2rem 0;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.project-images {
-  flex: 1;
-  display: flex;
-  overflow: hidden;
-}
-
-.project-images img {
-  width: 100%;
-  animation: slide 12s infinite;
-}
-
-@keyframes slide {
-  0% {transform: translateX(0);}
-  33% {transform: translateX(-100%);}
-  66% {transform: translateX(-200%);}
-  100% {transform: translateX(0);}
-}
-
-.project-info {
-  flex: 1;
-  padding: 20px;
-}
-
-.tools span {
-  background: #0f172a;
-  margin: 5px;
-  padding: 5px 10px;
-  border-radius: 5px;
-  display: inline-block;
-}
-
-.links a {
-  margin-right: 10px;
-  color: #38bdf8;
-}
-
-.timeline {
-  padding: 20px;
-}
-
-.timeline-item {
-  margin: 10px 0;
-  padding: 10px;
-  background: #1e293b;
-  border-radius: 6px;
 }
 
 /* Education Timeline */
@@ -559,3 +561,51 @@ body {
     --text-color: #00ff00;
     --accent-color: #00ff00;
 }
+
+
+
+#about h2 {
+  font-family: 'Courier New', monospace;
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-terminal {
+  font-family: 'Courier New', monospace;
+  background: #0f172a;       /* terminal-style background */
+  border: 1px solid #38bdf8; /* optional terminal border */
+  border-radius: 6px;
+  padding: 1.5rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+.about-item {
+  margin-bottom: 1rem;  /* spacing between sections */
+}
+
+.about-label {
+  display: block;
+  color: #38bdf8;      /* cyan/blue labels */
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+  font-size: 1.1rem;
+}
+
+.about-text {
+  display: block;
+  color: #cbd5e1;      /* text color */
+  font-size: 1rem;
+}
+
+.about-text a {
+  color: #7ee787;
+  text-decoration: none;
+}
+
+.about-text a:hover {
+  color: #38bdf8;
+  text-decoration: underline;
+}
+

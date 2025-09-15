@@ -55,19 +55,19 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function initializeTerminal() {
-  const inputIds = ['cmdInput', 'commandInput'];
+    const inputIds = ['cmdInput', 'commandInput'];
 
-  inputIds.forEach(id => {
-    const input = document.getElementById(id);
-    if (input) {
-      input.addEventListener('keyup', (e) => {
-        if (e.key === 'Enter') {
-          processCommand(e.target.value);
-          e.target.value = ''; // Optional: clear the input after submitting
+    inputIds.forEach(id => {
+        const input = document.getElementById(id);
+        if (input) {
+            input.addEventListener('keyup', (e) => {
+                if (e.key === 'Enter') {
+                    processCommand(e.target.value);
+                    e.target.value = ''; // Optional: clear the input after submitting
+                }
+            });
         }
-      });
-    }
-  });
+    });
 }
 
 
@@ -205,8 +205,8 @@ function loadSectionContent(sectionId) {
             const educationHTML = educationData.map(edu => `
                 <div class="education-node" style="border-left: 4px solid ${edu.color}">
                     <div class="node-header">
-                        <i class="fas fa-${edu.type === 'school' ? 'school' : 
-                          edu.type === 'college' ? 'university' : 'graduation-cap'}" 
+                        <i class="fas fa-${edu.type === 'school' ? 'school' :
+                    edu.type === 'college' ? 'university' : 'graduation-cap'}" 
                           style="color: ${edu.color}"></i>
                         <h3>${edu.title}</h3>
                         <span class="duration">${edu.duration}</span>
@@ -254,39 +254,63 @@ function loadContent() {
     const projects = [
         {
             name: 'Algorithms Visualizer',
-            desc: 'An interactive web-based platform designed to visually demonstrate the workings of various algorithms, including sorting, searching, and graph traversal. The visualizer helps learners and developers understand algorithmic steps through animated transitions, real-time speed control, and user interactions. Additional features include a back-step option, complexity analysis, and a user-friendly interface.twork analysis tool with real-time monitoring and threat detection capabilities. Supports multiple scanning protocols and provides detailed network topology mapping.',
-            tech: 'HTML, CSS, Javascirpt',
-            link: 'https://github.com/nahiiiiid/Intelligent-Algorithm-Visualizer'
+            desc: 'An interactive web-based platform designed to visually demonstrate the workings of various algorithms, including sorting, searching, and graph traversal.',
+            tech: ['HTML', 'CSS', 'JavaScript'],
+            link: 'https://github.com/nahiiiiid/Intelligent-Algorithm-Visualizer',
+            live: '#',
+            images: ['image.png', 'nahid.jpeg', 'image.png']
         },
         {
             name: 'Packet Sniffer',
-            desc: 'A low-level network utility developed to capture and analyze packets flowing through a network interface in real-time. The tool extracts headers, protocol information, and payload data, providing insights into IP, TCP, UDP, and ICMP packets. Useful for educational purposes, network diagnostics, and basic cybersecurity analysis.ered detection system using behavioral analysis and signature matching. Implements real-time monitoring with automated quarantine system for suspicious files.',
-            tech: 'Python, Scapy, Socket, Linux, Wireshark',
-            link: 'https://github.com/nahiiiiid/Packet-Sniffer'
+            desc: 'A low-level network utility developed to capture and analyze packets flowing through a network interface in real-time.',
+            tech: ['Python', 'Scapy', 'Socket', 'Linux', 'Wireshark'],
+            link: 'https://github.com/nahiiiiid/Packet-Sniffer',
+            live: '#',
+            images: ['image.png', 'nahid.jpeg', 'image.png']
         },
         {
             name: 'Algorithms Recommender',
-            desc: 'An AI-powered system that recommends the most suitable algorithm for a given problem statement. Users can input competitive programming problems (with constraints), and the system analyzes patterns, complexity requirements, and data structures to suggest optimal algorithms using intelligent rule-based and machine learning techniques.d network analysis tool with real-time monitoring and threat detection capabilities. Supports multiple scanning protocols and provides detailed network topology mapping.',
-            tech: 'Python, Scikit-Learn, Pandas, NumPy, scraping, Flask, HTML, CSS, Javascipt',
-            link: 'https://github.com/nahiiiiid/Intelligent-Algorithms-Recommender'
+            desc: 'An AI-powered system that recommends the most suitable algorithm for a given problem statement.',
+            tech: ['Python', 'Scikit-Learn', 'Pandas', 'NumPy', 'Flask', 'HTML', 'CSS', 'JavaScript'],
+            link: 'https://github.com/nahiiiiid/Intelligent-Algorithms-Recommender',
+            live: '#',
+            images: ['image.png', 'nahid.jpeg', 'image.png']
+        },
+        {
+            name: 'Banking App',
+            desc: 'A comprehensive banking web application with fund transfer and account management.',
+            tech: ['Spring Boot', 'OracleDB', 'Vue.js'],
+            link: '#',
+            live: '#',
+            images: ['image.png', 'nahid.jpeg', 'image.png']
         }
     ];
 
-    // In loadContent() function
     const projectsGrid = document.querySelector('.projects-grid');
-    projects.forEach(project => {
+    projects.forEach((project, index) => {
+        const reverseClass = index % 2 === 1 ? 'reverse' : ''; // flip for 2nd, 4th, etc.
+
         projectsGrid.innerHTML += `
-        <div class="project-card">
-            <h3 class="project-name">${project.name}</h3>
-            <p class="project-desc">${project.desc}</p>
-            <div class="project-tech">${project.tech}</div>
-            <a href="${project.link}" target="_blank" class="project-link">
-                View Code
-                <i class="fas fa-external-link-alt"></i>
-            </a>
+    <div class="project-card ${reverseClass}">
+      <div class="project-images">
+        ${project.images.map(img => `<img src="${img}" alt="${project.name} screenshot">`).join('')}
+      </div>
+      <div class="project-info">
+        <h3 class="project-name">${project.name}</h3>
+        <p class="project-desc">${project.desc}</p>
+        <div class="tools">
+          ${project.tech.map(t => `<span>${t}</span>`).join('')}
         </div>
-    `;
+        <div class="links">
+          <a href="${project.link}" target="_blank"><i class="fa-brands fa-github"></i> Source</a>
+          <a href="${project.live}" target="_blank"><i class="fa-solid fa-globe"></i> Live</a>
+        </div>
+      </div>
+    </div>
+  `;
     });
+
+
 }
 
 function addToHistory(text, type) {
@@ -324,7 +348,7 @@ function setupScrollObserver() {
                 if (entry.target.id === 'education' && !sections['education']?.visited) {
                     loadSectionContent('education');
                 }
-                
+
                 // Activate section and nodes
                 entry.target.classList.add('active');
                 initializeSections();

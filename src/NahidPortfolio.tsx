@@ -1030,6 +1030,7 @@ export default function NahidPortfolio() {
                     alt={`${profile.name} profile`}
                     className="h-full w-full object-cover"
                   />
+                  
 
                   {/* subtle overlay for lab/engineering look */}
                   <div
@@ -1040,6 +1041,7 @@ export default function NahidPortfolio() {
                     }}
                   />
                 </div>
+                
               </Card>
             </div>
 

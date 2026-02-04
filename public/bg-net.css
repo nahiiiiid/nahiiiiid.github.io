@@ -4,10 +4,10 @@
   inset: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;              /* behind everything */
-  pointer-events: none;     /* never block UI clicks */
-  display: block;
-}
+  z-index: -1;             
+  pointer-events: none;   
+  display: block; 
+} 
 
 /* Optional: subtle vignette layer to make it feel “lab-grade” */
 #bg-net-vignette {
@@ -16,7 +16,45 @@
   z-index: -1;
   pointer-events: none;
   background:
-    radial-gradient(70% 55% at 50% 20%, rgba(0,0,0,0.00), rgba(0,0,0,0.35)),
-    radial-gradient(120% 90% at 50% 120%, rgba(0,0,0,0.12), rgba(0,0,0,0.65));
-  opacity: 0.55;
+    /* radial-gradient(70% 55% at 50% 20%, rgba(0,0,0,0.00), rgba(0,0,0,0.35)),
+    radial-gradient(120% 90% at 50% 120%, rgba(0,0,0,0.12), rgba(0,0,0,0.65)); */
+    radial-gradient(70% 55% at 50% 20%, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.35)),
+    radial-gradient(120% 90% at 50% 120%, rgba(0, 0, 0, 0.12), rgba(0,0,0,0.65));
+  opacity: 1;
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+/* Full-page interactive background — always behind content */
+/* #bg-net-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;              /
+  pointer-events: none;    
+  display: block;
 }
+
+
+#bg-net-vignette {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(75% 60% at 50% 18%, rgba(0,0,0,0.00), rgba(0,0,0,0.35)),
+    radial-gradient(120% 90% at 50% 120%, rgba(0,0,0,0.10), rgba(0,0,0,0.70));
+  opacity: 0.55;
+} */
+
+/* Optional: if your site uses very bright background, you can lower opacity above */

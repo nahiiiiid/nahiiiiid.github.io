@@ -19,6 +19,7 @@ export const experience: ExperienceEntry[] = [
   {
     role: "Research Assistant (CPS/IoT Security)",
     company: "Green University of Bangladesh",
+    companyUrl: "https://company.com", // optional
     duration: "Jun 2024 — Dec 2024",
     location: "Remote",
     bullets: [

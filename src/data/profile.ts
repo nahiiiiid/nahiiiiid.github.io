@@ -5,16 +5,17 @@ export const profile = {
   headline: "Nahid Hasan Saikot — Software Engineer & Researcher",
   subHeadLine: "SWE",
   subtext:
-    "Systems thinking, algorithms, web engineering, and research-grade experimentation — built with calm execution.",
+    "Systems thinking in action. Algorithms optimized, web architectures engineered, and experiments executed with rigor. Code, design, and problem-solving aligned for scalable, reliable solutions. Calm precision guiding every system built, every logic path tested, every problem resolved.", 
+
   location: "Dhaka, BD",
   contact: {
-    email: "mailto:nahid@example.com",
-    whatsapp: "https://wa.me/8801XXXXXXXXX",
+    email: "mailto:nahidhasansaikot@gmail.com",
+    whatsapp: "https://wa.me/8801516546810",
   },
   social: {
     github: "https://github.com/nahiiiiid",
-    facebook: "https://facebook.com/your.profile",
-    youtube: "https://youtube.com/@yourchannel",
+    facebook: "https://facebook.com/nahiiiiiiiiiid",
+    youtube: "https://youtube.com/@nahiiiiiiiiiid",
   },
   aboutNarrative: [
     "I build software like a precision instrument: define the system boundary, model constraints, implement with correctness, and verify outcomes.",

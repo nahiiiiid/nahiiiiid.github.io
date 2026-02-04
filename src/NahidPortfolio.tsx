@@ -43,7 +43,6 @@ import { terminalCommands } from "./data/terminalCommands";
 import { applyTheme } from "./config/theme";
 import profileImg from "./assets/profile.jpeg";
 
-
 const SECTIONS: Array<{ id: SectionId; label: string }> = [
   { id: "home", label: "Home" },
   { id: "about", label: "About" },
@@ -852,7 +851,7 @@ export default function NahidPortfolio() {
                   {profile.subtext}
                 </p>
 
-                <div className="mt-8 flex flex-wrap gap-3">
+                {/* <div className="mt-8 flex flex-wrap gap-3">
                   <button
                     onClick={() => scrollToSection("projects")}
                     className="group inline-flex items-center gap-2 rounded-2xl border px-4 py-2.5 text-sm font-medium transition"
@@ -904,6 +903,72 @@ export default function NahidPortfolio() {
                       (Ctrl+K)
                     </span>
                   </button>
+                </div> */}
+                <div className="mt-8 flex flex-wrap gap-3">
+                  {/* PRIMARY: Command Mode */}
+                  <button
+                    onClick={() => setTerminalOpen(true)}
+                    className="group inline-flex items-center gap-2 rounded-2xl px-4 py-2.5 text-sm font-semibold transition hover:-translate-y-0.5 active:translate-y-0"
+                    style={{
+                      background:
+                        "linear-gradient(135deg, color-mix(in oklab, var(--accent) 34%, transparent), color-mix(in oklab, var(--accent2) 18%, transparent))" as any,
+                      border:
+                        "1px solid color-mix(in oklab, var(--accent) 40%, transparent)" as any,
+                      boxShadow: "var(--glow)",
+                      color: "var(--text)",
+                    }}
+                  >
+                    <Terminal
+                      className="h-4 w-4"
+                      style={{ color: "var(--accent)" }}
+                    />
+                    Command Mode
+                    <span
+                      className="ml-1 rounded-lg px-2 py-0.5 font-mono text-[11px]"
+                      style={{
+                        background:
+                          "color-mix(in oklab, var(--accent) 16%, transparent)" as any,
+                        border:
+                          "1px solid color-mix(in oklab, var(--accent) 22%, transparent)" as any,
+                        color: "var(--muted2)",
+                      }}
+                    >
+                      Ctrl+K
+                    </span>
+                    <ArrowRight className="h-4 w-4 opacity-70 transition-transform group-hover:translate-x-0.5" />
+                  </button>
+
+                  {/* SECONDARY: View Projects */}
+                  <button
+                    onClick={() => scrollToSection("projects")}
+                    className="group inline-flex items-center gap-2 rounded-2xl border px-4 py-2.5 text-sm font-medium transition hover:opacity-90 hover:-translate-y-0.5 active:translate-y-0"
+                    style={{
+                      borderColor: "var(--border)",
+                      background: "var(--panel2)",
+                      color: "var(--text)",
+                      boxShadow: "var(--shadow)",
+                    }}
+                  >
+                    View Projects
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                  </button>
+
+                  {/* SECONDARY: GitHub Profile */}
+                  <a
+                    href={profile.social.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 rounded-2xl border px-4 py-2.5 text-sm font-medium transition hover:opacity-90 hover:-translate-y-0.5 active:translate-y-0"
+                    style={{
+                      borderColor: "var(--border)",
+                      background: "var(--panel2)",
+                      color: "var(--text)",
+                      boxShadow: "var(--shadow)",
+                    }}
+                  >
+                    <Github className="h-4 w-4" /> GitHub Profile
+                    <ExternalLink className="h-4 w-4 opacity-70" />
+                  </a>
                 </div>
               </motion.div>
 

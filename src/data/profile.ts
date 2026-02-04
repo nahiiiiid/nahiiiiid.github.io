@@ -1,7 +1,7 @@
 export const profile = {
   handle: "nahiiiiid",
   name: "Nahid",
-  designation: "Software Engineer | Web Developer | CS Graduate",
+  designation: "Software Engineer | Researcher",
   headline: "Nahid Hasan Saikot — Software Engineer & Researcher",
   subHeadLine: "SWE",
   subtext:

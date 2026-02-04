@@ -31,7 +31,9 @@ import type {
 } from "./types";
 
 import { profile } from "./data/profile";
-import { skillCategories } from "./data/skills";
+// import { skillCategories } from "./data/skills";
+import { skillCategories, concepts } from "./data/skills";
+
 import { projects as PROJECTS } from "./data/projects";
 import { experience as EXPERIENCE } from "./data/experience";
 import { education as EDUCATION } from "./data/education";
@@ -40,6 +42,7 @@ import { blogPosts as BLOG } from "./data/blog";
 import { terminalCommands } from "./data/terminalCommands";
 import { applyTheme } from "./config/theme";
 import profileImg from "./assets/profile.jpeg";
+
 
 const SECTIONS: Array<{ id: SectionId; label: string }> = [
   { id: "home", label: "Home" },
@@ -990,7 +993,6 @@ export default function NahidPortfolio() {
             </div>
           </div>
         </section>
-
         <SectionShell
           id="about"
           title="About"
@@ -1030,7 +1032,6 @@ export default function NahidPortfolio() {
                     alt={`${profile.name} profile`}
                     className="h-full w-full object-cover"
                   />
-                  
 
                   {/* subtle overlay for lab/engineering look */}
                   <div
@@ -1041,7 +1042,6 @@ export default function NahidPortfolio() {
                     }}
                   />
                 </div>
-                
               </Card>
             </div>
 
@@ -1135,8 +1135,7 @@ export default function NahidPortfolio() {
             </div>
           </div>
         </SectionShell>
-
-        <SectionShell
+        {/* <SectionShell
           id="skills"
           title="Skills"
           icon={<Layers className="h-4 w-4" />}
@@ -1195,8 +1194,239 @@ export default function NahidPortfolio() {
               </Card>
             ))}
           </div>
-        </SectionShell>
+        </SectionShell> */}
 
+        <SectionShell
+          id="skills"
+          title="Skills"
+          icon={<Layers className="h-4 w-4" />}
+        >
+          <div className="grid gap-6">
+            {/* Table 1: Skill Categories */}
+            <Card className="p-6">
+              <div className="mb-4">
+                <div
+                  className="text-sm font-semibold"
+                  style={{ color: "var(--text)" }}
+                >
+                  Skill Categories
+                </div>
+                <div
+                  className="mt-1 text-xs"
+                  style={{ color: "var(--muted2)" }}
+                >
+                  Categorized stack — same items, cleaner layout.
+                </div>
+              </div>
+
+              <div className="overflow-x-auto">
+                <table className="w-full border-separate border-spacing-0">
+                  <thead>
+                    <tr>
+                      <th
+                        className="text-left text-xs font-semibold"
+                        style={{
+                          color: "var(--muted2)",
+                          borderBottom: "1px solid var(--border)",
+                          padding: "12px 12px",
+                          width: "260px",
+                        }}
+                      >
+                        Category
+                      </th>
+                      <th
+                        className="text-left text-xs font-semibold"
+                        style={{
+                          color: "var(--muted2)",
+                          borderBottom: "1px solid var(--border)",
+                          padding: "12px 12px",
+                        }}
+                      >
+                        Skills
+                      </th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    {skillCategories.map((cat) => (
+                      <tr key={cat.title} className="align-top">
+                        {/* Column 1: Category */}
+                        <td
+                          style={{
+                            borderBottom: "1px solid var(--border)",
+                            padding: "14px 12px",
+                          }}
+                        >
+                          <div className="flex items-center gap-3">
+                            <div
+                              className="grid h-10 w-10 place-items-center rounded-2xl border"
+                              style={{
+                                borderColor: "var(--border)",
+                                background: "var(--panel2)",
+                                color: "var(--accent)",
+                              }}
+                            >
+                              {cat.icon}
+                            </div>
+                            <div>
+                              <div
+                                className="text-sm font-semibold"
+                                style={{ color: "var(--text)" }}
+                              >
+                                {cat.title}
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+
+                        {/* Column 2: Skills (same pill style as before) */}
+                        <td
+                          style={{
+                            borderBottom: "1px solid var(--border)",
+                            padding: "14px 12px",
+                          }}
+                        >
+                          <div className="flex flex-wrap gap-2">
+                            {cat.items.map((s) => (
+                              <div
+                                key={`${cat.title}-${s.name}`}
+                                className="group flex items-center gap-2 rounded-xl border px-3 py-2 text-sm transition hover:opacity-95"
+                                style={{
+                                  borderColor: "var(--border)",
+                                  background: "var(--panel2)",
+                                  color: "var(--text)",
+                                }}
+                                title={
+                                  s.level ? `${s.name} • ${s.level}` : s.name
+                                }
+                              >
+                                <span
+                                  className="opacity-80 group-hover:opacity-100"
+                                  style={{ color: "var(--accent)" }}
+                                >
+                                  {s.icon}
+                                </span>
+                                <span className="truncate">{s.name}</span>
+                                {s.level ? (
+                                  <span
+                                    className="ml-1 hidden text-xs sm:inline"
+                                    style={{ color: "var(--muted2)" }}
+                                  >
+                                    {s.level}
+                                  </span>
+                                ) : null}
+                              </div>
+                            ))}
+                          </div>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </Card>
+
+            {/* Table 2: Concepts / Knowledge */}
+            <Card className="p-6">
+              <div className="mb-4">
+                <div
+                  className="text-sm font-semibold"
+                  style={{ color: "var(--text)" }}
+                >
+                  Concepts / Knowledge
+                </div>
+                <div
+                  className="mt-1 text-xs"
+                  style={{ color: "var(--muted2)" }}
+                >
+                  What I work with and how I apply it.
+                </div>
+              </div>
+
+              <div className="overflow-x-auto">
+                <table className="w-full border-separate border-spacing-0">
+                  <thead>
+                    <tr>
+                      <th
+                        className="text-left text-xs font-semibold"
+                        style={{
+                          color: "var(--muted2)",
+                          borderBottom: "1px solid var(--border)",
+                          padding: "12px 12px",
+                          width: "260px",
+                        }}
+                      >
+                        Concept
+                      </th>
+                      <th
+                        className="text-left text-xs font-semibold"
+                        style={{
+                          color: "var(--muted2)",
+                          borderBottom: "1px solid var(--border)",
+                          padding: "12px 12px",
+                        }}
+                      >
+                        Usage
+                      </th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    {concepts.map((c) => (
+                      <tr key={c.name} className="align-top">
+                        <td
+                          style={{
+                            borderBottom: "1px solid var(--border)",
+                            padding: "14px 12px",
+                          }}
+                        >
+                          <div
+                            className="group inline-flex items-center gap-2 rounded-xl border px-3 py-2 text-sm transition hover:opacity-95"
+                            style={{
+                              borderColor: "var(--border)",
+                              background: "var(--panel2)",
+                              color: "var(--text)",
+                            }}
+                          >
+                            {c.icon ? (
+                              <span
+                                className="opacity-80 group-hover:opacity-100"
+                                style={{ color: "var(--accent)" }}
+                              >
+                                {c.icon}
+                              </span>
+                            ) : null}
+                            <span className="truncate">{c.name}</span>
+                          </div>
+                        </td>
+
+                        <td
+                          style={{
+                            borderBottom: "1px solid var(--border)",
+                            padding: "14px 12px",
+                          }}
+                        >
+                          <div
+                            className="rounded-xl border px-3 py-2 text-sm transition hover:opacity-95"
+                            style={{
+                              borderColor: "var(--border)",
+                              background: "var(--panel2)",
+                              color: "var(--text)",
+                            }}
+                          >
+                            <span style={{ color: "var(--text)" }}>
+                              {c.description}
+                            </span>
+                          </div>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </Card>
+          </div>
+        </SectionShell>
         {/* <SectionShell
           id="projects"
           title="Projects"
@@ -1283,7 +1513,6 @@ export default function NahidPortfolio() {
             ))}
           </div>
         </SectionShell> */}
-
         <SectionShell
           id="projects"
           title="Projects"
@@ -1402,7 +1631,6 @@ export default function NahidPortfolio() {
             ))}
           </div>
         </SectionShell>
-
         <SectionShell
           id="experience"
           title="Experience"
@@ -1523,7 +1751,6 @@ export default function NahidPortfolio() {
             ))}
           </div>
         </SectionShell>
-
         <SectionShell
           id="education"
           title="Education"
@@ -1532,7 +1759,6 @@ export default function NahidPortfolio() {
         >
           <EducationTree nodes={EDUCATION} theme={theme} />
         </SectionShell>
-
         <SectionShell
           id="research"
           title="Research"
@@ -1640,7 +1866,6 @@ export default function NahidPortfolio() {
             ))}
           </div>
         </SectionShell>
-
         <SectionShell
           id="blog"
           title="Blog"
@@ -1689,7 +1914,6 @@ export default function NahidPortfolio() {
             ))}
           </div>
         </SectionShell>
-
         <footer
           className="border-t py-10"
           style={{ borderColor: "var(--border)" }}

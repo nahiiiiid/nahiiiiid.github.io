@@ -23,7 +23,9 @@ import {
   Repeat2,
   Heart,
   Share2,
-  Linkedin, Code, Binary,
+  Linkedin,
+  Code,
+  Binary,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -981,6 +983,7 @@ export default function NahidPortfolio() {
                   </a>
                 </div>
               </motion.div>
+              
 
               {/* <motion.div
                 initial={{ opacity: 0, y: 12 }}

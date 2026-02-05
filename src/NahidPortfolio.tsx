@@ -15,8 +15,15 @@ import {
   FileText,
   ArrowRight,
   GraduationCap,
-  FlaskConical,
   X,
+  User,
+  Activity,
+  FlaskConical,
+  MessageCircle,
+  Repeat2,
+  Heart,
+  Share2,
+  Linkedin, Code, Binary,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -42,6 +49,9 @@ import { blogPosts as BLOG } from "./data/blog";
 import { terminalCommands } from "./data/terminalCommands";
 import { applyTheme } from "./config/theme";
 import profileImg from "./assets/profile.jpeg";
+import about1 from "./assets/profile.jpeg";
+import about2 from "./assets/profile.jpeg";
+import about3 from "./assets/profile.jpeg";
 
 const SECTIONS: Array<{ id: SectionId; label: string }> = [
   { id: "home", label: "Home" },
@@ -1058,39 +1068,15 @@ export default function NahidPortfolio() {
             </div>
           </div>
         </section>
-        <SectionShell
+
+        {/* <SectionShell
           id="about"
           title="About"
           icon={<FileText className="h-4 w-4" />}
-          // subtitle="Simple"
         >
           <div className="grid gap-6 lg:grid-cols-12">
             <div className="lg:col-span-4">
               <Card className="p-0 overflow-hidden">
-                {/* <div className="relative aspect-[4/5] bg-gradient-to-b from-black/10 to-black/0">
-                  <div className="absolute inset-0 grid place-items-center">
-                    <div
-                      className="rounded-2xl border px-4 py-3 text-center"
-                      style={{
-                        borderColor: "var(--border)",
-                        background: "var(--panel2)",
-                      }}
-                    >
-                      <div
-                        className="text-xs"
-                        style={{ color: "var(--muted2)" }}
-                      >
-                        Profile image
-                      </div>
-                      <div
-                        className="mt-1 font-mono text-sm"
-                        style={{ color: "var(--text)" }}
-                      >
-                        Replace with your photo
-                      </div>
-                    </div>
-                  </div>
-                </div> */}
                 <div className="relative aspect-[4/5] overflow-hidden">
                   <img
                     src={profileImg}
@@ -1098,7 +1084,6 @@ export default function NahidPortfolio() {
                     className="h-full w-full object-cover"
                   />
 
-                  {/* subtle overlay for lab/engineering look */}
                   <div
                     className="pointer-events-none absolute inset-0"
                     style={{
@@ -1115,7 +1100,6 @@ export default function NahidPortfolio() {
                 <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
                   <div>
                     <div className="text-xs" style={{ color: "var(--muted2)" }}>
-                      {/* Name */}
                     </div>
                     <div
                       className="mt-1 text-2xl font-semibold tracking-tight"
@@ -1130,11 +1114,6 @@ export default function NahidPortfolio() {
                       {profile.designation}
                     </div>
                   </div>
-                  {/* <div className="mt-4 flex flex-wrap gap-2 sm:mt-0">
-                    {profile.badges.map((b) => (
-                      <Badge key={b}>{b}</Badge>
-                    ))}
-                  </div> */}
                 </div>
 
                 <div className="mt-6 grid gap-2 sm:grid-cols-5">
@@ -1199,7 +1178,295 @@ export default function NahidPortfolio() {
               </Card>
             </div>
           </div>
+        </SectionShell> */}
+
+        <SectionShell
+          id="about"
+          title="About"
+          icon={<FileText className="h-4 w-4" />}
+        >
+          <div className="space-y-6">
+            {/* 3 photos row */}
+            <div className="grid gap-4 sm:grid-cols-3">
+              {[about1, about2, about3].map((src, i) => (
+                <Card key={i} className="p-0 overflow-hidden">
+                  <div className="relative aspect-[4/5] overflow-hidden">
+                    <img
+                      src={src}
+                      alt={`${profile.name} photo ${i + 1}`}
+                      className="h-full w-full object-cover"
+                    />
+                    <div
+                      className="pointer-events-none absolute inset-0"
+                      style={{
+                        background:
+                          "linear-gradient(to bottom, rgba(0,0,0,0.06), rgba(0,0,0,0.55))",
+                      }}
+                    />
+                  </div>
+                </Card>
+              ))}
+            </div>
+
+            {/* identity header (name + designation) */}
+            <Card className="p-6">
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+                <div>
+                  <div
+                    className="text-2xl font-semibold tracking-tight"
+                    style={{ color: "var(--text)" }}
+                  >
+                    {profile.name}
+                  </div>
+                  <div
+                    className="mt-2 text-sm"
+                    style={{ color: "var(--muted)" }}
+                  >
+                    {profile.designation}
+                  </div>
+                </div>
+              </div>
+
+              {/* contact row */}
+              {/* <div className="mt-6 grid gap-2 sm:grid-cols-5">
+                {[
+                  {
+                    label: "Gmail",
+                    href: profile.contact.email,
+                    icon: <Mail className="h-4 w-4" />,
+                    ext: false,
+                  },
+                  {
+                    label: "WhatsApp",
+                    href: profile.contact.whatsapp,
+                    icon: <Smartphone className="h-4 w-4" />,
+                    ext: true,
+                  },
+                  {
+                    label: "Facebook",
+                    href: profile.social.facebook,
+                    icon: <Facebook className="h-4 w-4" />,
+                    ext: true,
+                  },
+                  {
+                    label: "YouTube",
+                    href: profile.social.youtube,
+                    icon: <Youtube className="h-4 w-4" />,
+                    ext: true,
+                  },
+                  {
+                    label: "GitHub",
+                    href: profile.social.github,
+                    icon: <Github className="h-4 w-4" />,
+                    ext: true,
+                  },
+                ].map((c) => (
+                  <a
+                    key={c.label}
+                    href={c.href}
+                    target={c.ext ? "_blank" : undefined}
+                    rel={c.ext ? "noreferrer" : undefined}
+                    className="inline-flex items-center justify-center gap-2 rounded-xl border px-3 py-2 text-sm transition hover:opacity-90"
+                    style={{
+                      borderColor: "var(--border)",
+                      background: "var(--panel2)",
+                      color: "var(--text)",
+                    }}
+                  >
+                    <span style={{ color: "var(--accent)" }}>{c.icon}</span>{" "}
+                    {c.label}
+                  </a>
+                ))}
+              </div> */}
+
+              <div className="mt-6 grid gap-2 sm:grid-cols-5 lg:grid-cols-6">
+                {[
+                  {
+                    label: "Gmail",
+                    href: profile.contact.email,
+                    icon: <Mail className="h-4 w-4" />,
+                    ext: false,
+                  },
+                  {
+                    label: "WhatsApp",
+                    href: profile.contact.whatsapp,
+                    icon: <Smartphone className="h-4 w-4" />,
+                    ext: true,
+                  },
+                  {
+                    label: "LinkedIn",
+                    href: profile.social.linkedin,
+                    icon: <Linkedin className="h-4 w-4" />,
+                    ext: true,
+                  },
+                  {
+                    label: "X",
+                    href: profile.social.x,
+                    icon: <X className="h-4 w-4" />,
+                    ext: true,
+                  },
+                  {
+                    label: "LeetCode",
+                    href: profile.social.leetcode,
+                    icon: <Code className="h-4 w-4" />,
+                    ext: true,
+                  },
+                  {
+                    label: "Codeforces",
+                    href: profile.social.codeforces,
+                    icon: <Binary className="h-4 w-4" />,
+                    ext: true,
+                  },
+                  {
+                    label: "Kaggle",
+                    href: profile.social.kaggle,
+                    icon: <Database className="h-4 w-4" />,
+                    ext: true,
+                  },
+                  {
+                    label: "HackerRank",
+                    href: profile.social.hackerrank,
+                    icon: <Terminal className="h-4 w-4" />,
+                    ext: true,
+                  },
+                  {
+                    label: "GitHub",
+                    href: profile.social.github,
+                    icon: <Github className="h-4 w-4" />,
+                    ext: true,
+                  },
+                  {
+                    label: "Facebook",
+                    href: profile.social.facebook,
+                    icon: <Facebook className="h-4 w-4" />,
+                    ext: true,
+                  },
+                  {
+                    label: "YouTube",
+                    href: profile.social.youtube,
+                    icon: <Youtube className="h-4 w-4" />,
+                    ext: true,
+                  },
+                ]
+                  .filter(Boolean)
+                  .map((c) => (
+                    <a
+                      key={c.label}
+                      href={c.href}
+                      target={c.ext ? "_blank" : undefined}
+                      rel={c.ext ? "noreferrer" : undefined}
+                      className="inline-flex items-center justify-center gap-2 rounded-xl border px-3 py-2 text-sm transition hover:opacity-90"
+                      style={{
+                        borderColor: "var(--border)",
+                        background: "var(--panel2)",
+                        color: "var(--text)",
+                      }}
+                    >
+                      <span style={{ color: "var(--accent)" }}>{c.icon}</span>{" "}
+                      {c.label}
+                    </a>
+                  ))}
+              </div>
+            </Card>
+            {/* X / Twitter timeline style — SINGLE BOX */}
+            <Card className="p-0 overflow-hidden">
+              <div
+                className="p-5 sm:p-6"
+                style={{
+                  background: "var(--panel)",
+                  boxShadow: "var(--shadow)",
+                }}
+              >
+                {/* header */}
+                <div className="flex items-center justify-between gap-3">
+                  <div className="flex items-center gap-2">
+                    <span
+                      className="font-semibold"
+                      style={{ color: "var(--text)" }}
+                    >
+                      {/* Timeline */}
+                    </span>
+                    <span
+                      className="font-mono text-xs"
+                      style={{ color: "var(--muted2)" }}
+                    >
+                      {/* @{profile.handle} */}
+                    </span>
+                  </div>
+
+                  <span
+                    className="font-mono text-xs"
+                    style={{ color: "var(--muted2)" }}
+                  >
+                    {/* pinned */}
+                  </span>
+                </div>
+
+                {/* posts in one container */}
+                <div className="mt-5 space-y-5">
+                  {profile.aboutPosts.map((post, idx) => (
+                    <div key={idx} className="flex gap-4">
+                      {/* left icon + vertical line */}
+                      <div className="flex flex-col items-center">
+                        <div
+                          className="grid h-10 w-10 place-items-center rounded-xl border"
+                          style={{
+                            borderColor:
+                              "color-mix(in oklab, var(--accent) 30%, transparent)" as any,
+                            background:
+                              "color-mix(in oklab, var(--accent) 12%, transparent)" as any,
+                            color: "var(--accent)",
+                          }}
+                        >
+                          {/* you can swap icon per post later; default icon fallback */}
+                          <MessageCircle className="h-4 w-4" />
+                        </div>
+
+                        {/* line only between posts */}
+                        {idx < profile.aboutPosts.length - 1 ? (
+                          <div
+                            className="mt-3 w-px flex-1"
+                            style={{
+                              background:
+                                "linear-gradient(to bottom, var(--border), transparent)",
+                            }}
+                          />
+                        ) : null}
+                      </div>
+
+                      {/* content */}
+                      <div className="min-w-0 flex-1">
+                        <div className="flex flex-wrap items-center justify-between gap-2">
+                          <span
+                            className="font-semibold"
+                            style={{ color: "var(--text)" }}
+                          >
+                            {post.title}
+                          </span>
+                          {/* <span
+                            className="font-mono text-xs"
+                            style={{ color: "var(--muted2)" }}
+                          >
+                            note
+                          </span> */}
+                        </div>
+
+                        {/* ✅ Long text + readable line gaps + preserves newlines */}
+                        <div
+                          className="mt-3 text-sm leading-relaxed sm:text-base whitespace-pre-line"
+                          style={{ color: "var(--muted)" }}
+                        >
+                          {post.text}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </Card>
+          </div>
         </SectionShell>
+
         {/* <SectionShell
           id="skills"
           title="Skills"
@@ -1274,13 +1541,13 @@ export default function NahidPortfolio() {
                   className="text-sm font-semibold"
                   style={{ color: "var(--text)" }}
                 >
-                  Skill Categories
+                  {/* Skill Categories */}
                 </div>
                 <div
                   className="mt-1 text-xs"
                   style={{ color: "var(--muted2)" }}
                 >
-                  Categorized stack — same items, cleaner layout.
+                  {/* Categorized stack — same items, cleaner layout. */}
                 </div>
               </div>
 
@@ -1297,7 +1564,7 @@ export default function NahidPortfolio() {
                           width: "260px",
                         }}
                       >
-                        Category
+                        {/* Category */}
                       </th>
                       <th
                         className="text-left text-xs font-semibold"
@@ -1307,7 +1574,7 @@ export default function NahidPortfolio() {
                           padding: "12px 12px",
                         }}
                       >
-                        Skills
+                        {/* Skills */}
                       </th>
                     </tr>
                   </thead>
@@ -1398,13 +1665,13 @@ export default function NahidPortfolio() {
                   className="text-sm font-semibold"
                   style={{ color: "var(--text)" }}
                 >
-                  Concepts / Knowledge
+                  {/* Concepts / Knowledge */}
                 </div>
                 <div
                   className="mt-1 text-xs"
                   style={{ color: "var(--muted2)" }}
                 >
-                  What I work with and how I apply it.
+                  {/* What I work with and how I apply it. */}
                 </div>
               </div>
 
@@ -1421,7 +1688,7 @@ export default function NahidPortfolio() {
                           width: "260px",
                         }}
                       >
-                        Concept
+                        {/* Concept */}
                       </th>
                       <th
                         className="text-left text-xs font-semibold"
@@ -1431,7 +1698,7 @@ export default function NahidPortfolio() {
                           padding: "12px 12px",
                         }}
                       >
-                        Usage
+                        {/* Usage */}
                       </th>
                     </tr>
                   </thead>
@@ -1450,7 +1717,7 @@ export default function NahidPortfolio() {
                             style={{
                               borderColor: "var(--border)",
                               background: "var(--panel2)",
-                              color: "var(--text)",
+                              color: "var(--mut)",
                             }}
                           >
                             {c.icon ? (
@@ -1479,7 +1746,7 @@ export default function NahidPortfolio() {
                               color: "var(--text)",
                             }}
                           >
-                            <span style={{ color: "var(--text)" }}>
+                            <span style={{ color: "var(--muted)" }}>
                               {c.description}
                             </span>
                           </div>
@@ -1677,7 +1944,7 @@ export default function NahidPortfolio() {
                       className="h-4 w-4"
                       style={{ color: "var(--accent)" }}
                     />{" "}
-                    Engineer notes
+                    Insights
                   </div>
                   <ul className="mt-2 list-disc space-y-1 pl-5">
                     <li>

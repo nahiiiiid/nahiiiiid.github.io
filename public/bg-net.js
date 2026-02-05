@@ -792,7 +792,7 @@
 
   const cfg = {
     // grid
-    spacing: 48,
+    spacing: 50,
     jitter: 10,
     lineWidth: 1.05,
 
@@ -826,7 +826,7 @@
 
     // healing
     tearCooldownMs: 1800,     // stays broken
-    tearHealMs: 1800,        // fade in
+    tearHealMs: 14400,        // fade in
   };
 
   const pointer = {

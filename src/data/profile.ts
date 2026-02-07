@@ -40,9 +40,12 @@ aboutPosts: [
   {
     title: "What am I?",
     text:
+      "I build software like a precision instrument: define the system boundary, model constraints, implement with correctness, and verify outcomes.\n\n" +
       "I build software like a precision instrument.\n" +
       "Define boundaries, model constraints, implement with correctness, verify outcomes.\n\n" +
-      "Calm, structured, engineering-first execution — always.",
+      "Calm, structured, engineering-first execution — always.\n\n" +
+      "I build software like a precision instrument: define the system boundary, model constraints, implement with correctness, and verify outcomes.\n\n" +
+      "I design interfaces that feel like developer workstations — clean, fast, keyboard-friendly, and structured. On the backend, I prefer clear abstractions and measurable performance.",
   },
   {
     title: "What am I doing?",

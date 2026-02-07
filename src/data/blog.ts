@@ -3,7 +3,8 @@ import type { Post } from "../types";
 export const blogPosts: Post[] = [
   {
     title: "Leakage-Aware Preprocessing: A Practical Checklist",
-    excerpt: "Avoid accidental data leakage in ML security datasets — split strategy, normalization, validation design.",
+    excerpt: "Avoid accidental data leakage in ML security datasets — split strategy, normalization, validation design. Avoid accidental data leakage in ML security datasets — split strategy, normalization, validation design.\n\n"+
+      "Avoid accidental data leakage in ML security datasets — split strategy, normalization, validation design.",
     date: "2026-01-18",
     slug: "leakage-aware-preprocessing-checklist",
   },

@@ -58,6 +58,37 @@ export const auraTheme: ThemeTokens = {
   "--glow": "0 0 0 1px rgba(2,132,199,0.18), 0 18px 60px -40px rgba(2,132,199,0.25)",
 };
 
+
+
+
+// ✅ UPDATED: Professional, eye-friendly light theme (less glass, softer contrast)
+// - Background: warm-neutral instead of bright white
+// - Panels: solid-ish (less transparency = cleaner + readable)
+// - Text: strong but not harsh
+// - Accent: calm blue (not neon)
+// - Borders: slightly clearer so cards look structured
+
+// export const auraTheme: ThemeTokens = {
+//   "--bg": "#F7F8FA", // soft neutral light
+//   "--panel": "rgba(255, 255, 255, 0.92)", // cleaner + readable
+//   "--panel2": "rgba(255, 255, 255, 0.78)", // still layered but not too glassy
+
+//   "--text": "rgba(17, 24, 39, 0.94)", // near-slate (easy on eye)
+//   "--muted": "rgba(55, 65, 81, 0.78)", // softer
+//   "--muted2": "rgba(75, 85, 99, 0.62)",
+
+//   "--border": "rgba(17, 24, 39, 0.12)", // slightly stronger border for structure
+
+//   "--accent": "rgba(37, 99, 235, 0.88)", // calm professional blue
+//   "--accent2": "rgba(59, 130, 246, 0.22)", // subtle highlight, not glowing hard
+
+//   "--grid": "rgba(17, 24, 39, 0.06)", // lighter grid
+
+//   "--shadow": "0 1px 2px rgba(17,24,39,0.06), 0 0 0 1px rgba(17,24,39,0.06)",
+//   "--glow":
+//     "0 0 0 1px rgba(37,99,235,0.14), 0 18px 55px -45px rgba(37,99,235,0.18)", // subtle, not flashy
+// };
+
 export function applyTheme(theme: Theme) {
   const root = document.documentElement;
 
